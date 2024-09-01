@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "title": "Complete project docs",
+        "description": "Finish writing the project documentation and ensure it's current.",
+        "isCompleted": false,
+        "isUrgent": false
+    },
+    {
+        "id": 2,
+        "title": "Set up CI/CD",
+        "description": "Config the CI/CD pipeline for automatic testing and deployment.",
+        "isCompleted": true,
+        "isUrgent": true
+    },
+    {
+        "id": 3,
+        "title": "Refactor codebase",
+        "description": "Improve the structure and readability of the existing codebase.",
+        "isCompleted": false,
+        "isUrgent": false
+    },
+    {
+        "id": 4,
+        "title": "Implement user authentication",
+        "description": "Use OAuth to authenticate users.",
+        "isCompleted": false,
+        "isUrgent": true
+    },
+    {
+        "id": 5,
+        "title": "Write unit tests",
+        "description": "Write unit tests for the main components",
+        "isCompleted": false,
+        "isUrgent": false
+    },
+    {
+        "id": 6,
+        "title": "Deploy to prod",
+        "description": "Deploy the app to the prod environment.",
+        "isCompleted": false,
+        "isUrgent": false
+    },
+    {
+        "id": 7,
+        "title": "Fix bug in the login page",
+        "description": "Resolve the issue causing the form submission to fail",
+        "isCompleted": true,
+        "isUrgent": true
+    },
+    {
+        "id": 8,
+        "title": "Redesign landing page",
+        "description": "Revamp landing page with modern and responsive design",
+        "isCompleted": false,
+        "isUrgent": false
+    }
+]

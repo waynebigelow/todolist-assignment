@@ -1,0 +1,173 @@
+#__next {
+    display: contents;
+}
+
+body {
+    margin: 0;
+    font-family: 'Lucida', sans-serif;
+    background: linear-gradient(to bottom, #121212, #1e1e1e, #bb86fc 120%);
+    color: #e0e0e0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-x: hidden;
+    padding: 20px;
+    min-width: 300px;
+}
+
+.banner {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0, 0.7);
+    border-radius: 16px;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.banner h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0 1rem;
+    background: rgba(0,0,0,0.4);
+    border-radius: 16px;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 2px;
+    right: 5px;
+    font-size: .75rem;
+    background: rgba(0,0,0,0.4);
+    padding: 2px 4px;
+    border-radius: 16px;
+}
+
+.Home {
+    flex: 1;
+    max-width: 800px;
+    width: 100%;
+    padding: 1.5rem;
+    background: rgba(30, 30, 30, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .5);
+}
+
+h1 {
+    text-align: center;
+    color: #bb86fc;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #2a2a2a;
+    border: 1px solid #333;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+li:hover {
+    background-color: #333;
+}
+
+button {
+    background-color: #bb86fc;
+    color: #121212;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #9b59fc;
+}
+
+button:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+}
+
+button + button {
+    margin-left: 0.5rem;
+}
+
+input,
+textarea {
+    width: calc(100% - 1.5rem);
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #222;
+    color: #e0e0e0;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #888;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #bb86fc;
+}
+
+label {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+}
+
+.todo-item h3,
+.todo-item-urgent h3 {
+    margin: 0 0 0.5rem;
+}
+
+.todo-item p,
+.todo-item-urgent p {
+    margin: 0 0 0.75rem;
+    color: #bbb
+}
+
+.todo-buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-start;
+}
+
+.todo-item-urgent {
+    border-left: red solid 3px;
+}
+
+.todo-item-complete {
+    border-left: green solid 3px;
+}
+
+@media (max-width: 500px) {
+    .todo-buttons {
+        flex-direction: column;
+    }
+
+    .todo-buttons button {
+        margin-left: 0;
+        width: fit-content;
+    }  
+}
