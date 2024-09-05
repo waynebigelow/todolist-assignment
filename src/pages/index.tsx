@@ -20,6 +20,7 @@ import sampleData from "@/sampleData.json";
  * displayTodos - calls displayTodoList with a filtered To Do selection
  * displayComplete - calls displayTodoList with a filtered To Do selection
  */
+
 export default function Home() {
   const [todos, setTodos] = useState<Todo[]>(sampleData);
 
@@ -31,16 +32,19 @@ export default function Home() {
       isCompleted: false,
       isUrgent: false,
     };
-
-    todos.push(newTodo);
-    setTodos(todos);
+    
+    setTodos([...todos, newTodo]);
+    // todos.push(newTodo);
+    // setTodos(todos);
   };
 
   const deleteTodo = (id: number) => {
-    setTodos(todos.filter((todo) => todo.id === id));
+    setTodos(todos.filter((todo) => todo.id !== id));
+    // setTodos(todos.filter((todo) => todo.id === id));
   };
 
-  const toggleProperty = useCallback((id: number, property: keyof Pick<Todo, 'isCompleted' | 'isUrgent'>) => {
+  const toggleProperty = (id: number, property: keyof Pick<Todo, 'isCompleted' | 'isUrgent'>) => {
+  //const toggleProperty = useCallback((id: number, property: keyof Pick<Todo, 'isCompleted' | 'isUrgent'>) => {
     const updatedTodos = todos.map((todo) => {
       if (todo.id === id) {
         todo[property] = !todo[property] as boolean;
@@ -48,7 +52,8 @@ export default function Home() {
       return todo;
     });
     setTodos(updatedTodos);
-  }, [setTodos]);
+  // }, [setTodos]);
+  };
 
   const displayTodoList = (todoList:Todo[]) => {
     return (
@@ -66,7 +71,8 @@ export default function Home() {
       if (displayUrgent) {
         return !x.isCompleted && x.isUrgent === displayUrgent;
       } else {
-        return !x.isCompleted && x.isUrgent !== displayUrgent;
+        return !x.isCompleted && !x.isUrgent !== displayUrgent;
+        // return !x.isCompleted && x.isUrgent !== displayUrgent;
       }
     }));
   };
@@ -85,7 +91,7 @@ export default function Home() {
       </Head>
 
       <div className="Home">
-        <Banner />
+        
         <AddTodoForm addTodo={AddTodo}/>
         {displayTodos(true)}
         {displayTodos(false)}
